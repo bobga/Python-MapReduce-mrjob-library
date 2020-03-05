@@ -30,7 +30,7 @@ Entitle the python program in question part2.py. That is, entering the following
 Uniform Resource Locator (URL) links describe the structure of the web. Consider a CSV file where each line contains two URLs which specify a single link. That is, the first and second values on each line specify the source and destination of the link in question.<br>
 <i>For examplem</i>, consider the following sample CSV file:
 <p>url1,url2</p>
-<p>url1,url3/p>
+<p>url1,url3</p>
 <p>url2,url3</p>
 <p>url4,url5</p>
 <p>url2,url4</p>
