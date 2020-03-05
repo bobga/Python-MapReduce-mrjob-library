@@ -8,7 +8,7 @@ Each solution should distribute computaton across multiple map and/or reducer ta
 
 <h3>Part1</h3>
 Given a CSV file where each line cotains a set of numbers, write a MapReudce program which determines the maximum of all numbers in the file. <br>
-For example, consider the following sample CSV file: <br>
+<i>For example</i>, consider the following sample CSV file: <br>
 2,2,3 <br>
 4,3 <br>
 
