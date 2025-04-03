@@ -1,71 +1,122 @@
-# Python-MapReduce-mrjob-library
-Python MapReduce sample project with mrjob library
+# Python MapReduce with mrjob Library
 
-Python version 3.8.0
+A collection of MapReduce programs implemented using Python 3 and the mrjob library. This project demonstrates various MapReduce operations including finding maximum values, calculating means, analyzing URL paths, and word line indexing.
 
-This project requires you to write four MapReduce programs. These programs should be written using Python 3  and the Python mrjob library.
-Each solution should distribute computaton across multiple map and/or reducer tasks.
+## Prerequisites
 
-<h3>Part 1</h3>
-Given a CSV file where each line cotains a set of numbers, write a MapReudce program which determines the maximum of all numbers in the file. <br>
-<i>For example</i>, consider the following sample CSV file: <br>
-2,2,3 <br>
-4,3 <br>
+- Python 3.8.0 or higher
+- pipenv (for dependency management)
+- mrjob library
 
-Given this CSV file, the maximum is 4.
+## Installation
 
-Entitle the python program in question part1.py. That is, entering the following command at the terminal should result in your MapReduce program being applied to fileName.csv pipenv run python part1.py fileName.csv
+1. Clone this repository:
+```bash
+git clone https://github.com/yourusername/Python-MapReduce-mrjob-library.git
+cd Python-MapReduce-mrjob-library
+```
 
-<h3>Part 2</h3>
-Given a CSV file where each line contains a set of numbers, write a MapReduce program which determines the mean of all numbers in the file. <br>
-<i>For example</i>, consider the following sample CSV file:
-<p>2,2,3</p>
-<p>4,3</p>
+2. Install dependencies using pipenv:
+```bash
+pipenv install
+```
 
-Given this CSV file, the mean is 2.8.
+## Project Structure
 
-Entitle the python program in question part2.py. That is, entering the following command at the terminal should result in your MapReduce program being applied to fileName.csv pipenv run python part2.py fileName.csv
+The project consists of four MapReduce programs, each solving a specific problem:
 
-<h3>Part 3</h3>
-Uniform Resource Locator (URL) links describe the structure of the web. Consider a CSV file where each line contains two URLs which specify a single link. That is, the first and second values on each line specify the source and destination of the link in question.<br>
-<i>For examplem</i>, consider the following sample CSV file:
-<p>url1,url2</p>
-<p>url1,url3</p>
-<p>url2,url3</p>
-<p>url4,url5</p>
-<p>url2,url4</p>
+### 1. Finding Maximum Value (`part1.py`)
+Given a CSV file where each line contains a set of numbers, this program determines the maximum of all numbers in the file.
 
-Given such s CSV file, write a MapReduce program which finds all paths of length two in the corresponding URL links. That is, it finds the triples of URLs(u, v, w) such taht there is a link from u to v and a link from v to w.
+**Example Input:**
+```
+2,2,3
+4,3
+```
 
-<i>For example</i>, the sample CSV file above contains the following paths of length two:
-<p>url2,url4,url5</p>
-<p>url1,url2,url3</p>
-<p>url1,url2,url4</p>
+**Expected Output:** `4`
 
-Entitle the python program in question part3.py. That is, entering the following command at the terminal should result in your MapReduce program being applied th filaName.csv pipenv run python part3.py fileName.csv
+**Usage:**
+```bash
+pipenv run python part1.py input.csv
+```
 
-<h3>part 4</h3>
-Write a MapReduce program which takes as input a file containing comma seperated words and outputs for each word the lines that the word appears in. 
-<i>For example</i>, consider the following file:
-<p>goat,chicken,horse</p>
-<p>cat,horse</p>
-<p>dog,cat,sheep</p>
-<p>buffalo,dolphin,cat</p>
-<p>sheep</p>
+### 2. Calculating Mean (`part2.py`)
+Given a CSV file where each line contains a set of numbers, this program calculates the mean of all numbers in the file.
 
-The corresponding output will be the following:
-<p>"buffalo" ["buffalo, dolphin, cat"]</p>
-<p>"cat" ["buffalo, dolphin, cat", "cat,horse","dog,cat,sheep"]</p>
-<p>"chicken" ["goat,chicken,horse"]</p>
-<p>"dog" ["dog,cat,sheep"]</p>
-<p>"dolphin" ["buffalo,dolphin,cat"]</p>
-<p>"goat" ["goat,chicken,horse"]</p>
-<p>"horse" ["cat,horse","goat,chicken,horse"]</p>
-<p>"sheep" ["dog,cat,sheep","sheep"]</p>
+**Example Input:**
+```
+2,2,3
+4,3
+```
 
-Entitle the python program in question part4.py. That is, entering the following command at the terminal should result in your MapReduce program being applied to fileName.csv pipenv run python part4.py fileName.csv
+**Expected Output:** `2.8`
 
-<h3>Results</h3>
+**Usage:**
+```bash
+pipenv run python part2.py input.csv
+```
+
+### 3. Finding URL Paths (`part3.py`)
+Given a CSV file where each line contains two URLs (source and destination), this program finds all paths of length two in the URL links.
+
+**Example Input:**
+```
+url1,url2
+url1,url3
+url2,url3
+url4,url5
+url2,url4
+```
+
+**Expected Output:**
+```
+url2,url4,url5
+url1,url2,url3
+url1,url2,url4
+```
+
+**Usage:**
+```bash
+pipenv run python part3.py input.csv
+```
+
+### 4. Word Line Indexing (`part4.py`)
+This program takes a file containing comma-separated words and outputs for each word the lines that contain it.
+
+**Example Input:**
+```
+goat,chicken,horse
+cat,horse
+dog,cat,sheep
+buffalo,dolphin,cat
+sheep
+```
+
+**Expected Output:**
+```
+"buffalo" ["buffalo, dolphin, cat"]
+"cat" ["buffalo, dolphin, cat", "cat,horse", "dog,cat,sheep"]
+"chicken" ["goat,chicken,horse"]
+"dog" ["dog,cat,sheep"]
+"dolphin" ["buffalo,dolphin,cat"]
+"goat" ["goat,chicken,horse"]
+"horse" ["cat,horse", "goat,chicken,horse"]
+"sheep" ["dog,cat,sheep", "sheep"]
+```
+
+**Usage:**
+```bash
+pipenv run python part4.py input.csv
+```
+
+## Contributing
+
+Feel free to submit issues and enhancement requests!
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
   
 
